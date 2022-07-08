@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST">
+        <table>
+            {{formPersona}}
+        </table>
+        <br>
+        <button type="submit">Enviar</button>
+        <br>
+        <div><a href="{% url 'inicio' %}">Regresar</a></div>
+        {% csrf_token %}
+    </form>
+
+</body>
+</html>

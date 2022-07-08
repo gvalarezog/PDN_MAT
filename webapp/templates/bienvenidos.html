@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAP</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Bienvenidos al Sistema de Administración de Personas</h1>
+        <p>La cantidad de personas registradas es: {{cantidad}}</p>
+    </div>
+    <div>
+        <a href="nueva_persona" >Agregar Persona</a>
+        <br>
+        <br>
+    </div>
+    <div>
+        <table>
+         <tr>
+            <th>ID</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Email</th>
+        </tr>
+        {% for persona in personas %}
+            <tr>
+                <td>{{ persona.id }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.email }}</td>
+                <td><a href="detalle_persona/{{ persona.id }}"/> Ver detalle</td>
+                <td><a href="modificar_persona/{{ persona.id }}"/> Editar</td>
+                <td><a href="eliminar_persona/{{ persona.id }}"/> Eliminar</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
